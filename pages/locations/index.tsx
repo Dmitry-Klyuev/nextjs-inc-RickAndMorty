@@ -1,6 +1,5 @@
 import React from 'react';
 import {PageWrapper} from "../../components/PageWrapper/PageWrapper";
-import {Header} from "../../components/Header/Header";
 import {dehydrate, QueryClient, useQuery} from "@tanstack/react-query";
 import {LocationType, ResponseType} from "../../assets/api/rick-and-morty-api";
 import {Card} from "../../components/Card/Card";
