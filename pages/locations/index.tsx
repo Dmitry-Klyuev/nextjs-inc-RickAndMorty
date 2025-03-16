@@ -1,9 +1,9 @@
 import React from 'react';
-import {PageWrapper} from "../../components/PageWrapper/PageWrapper";
+import {PageWrapper} from "@/C/PageWrapper/PageWrapper";
 import {dehydrate, QueryClient, useQuery} from "@tanstack/react-query";
-import {LocationType, ResponseType} from "../../assets/api/rick-and-morty-api";
-import {Card} from "../../components/Card/Card";
-import {getLayout} from "../../components/Layout/BaseLayout/BaseLayout";
+import {LocationType, ResponseType} from "@/A/api/rick-and-morty-api";
+import {Card} from "@/C/Card/Card";
+import {getLayout} from "@/C/Layout/BaseLayout/BaseLayout";
 
 const getLocations = async () => {
     const res = await fetch('https://rickandmortyapi.com/api/location')
