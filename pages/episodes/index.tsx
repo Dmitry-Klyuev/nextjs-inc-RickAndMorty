@@ -3,8 +3,13 @@ import { EpisodeType, ResponseType} from "@/A/api/rick-and-morty-api";
 import {PageWrapper} from "@/C/PageWrapper/PageWrapper";
 import {Card} from "@/C/Card/Card";
 import {getLayout} from "@/C/Layout/BaseLayout/BaseLayout";
+import {GetServerSideProps} from "next";
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+    const {res} = ctx
+    //ревалидация кэша
+    res.setHeader('Cache-Control','public, s-maxage=10, stale-while-revalidate=100')
+
     const episodes = await API.rickAndMorty.getEpisodes()
     //если нет эпизодов, то 404
     if(!episodes){
